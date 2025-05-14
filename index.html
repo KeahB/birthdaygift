@@ -13,94 +13,84 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0px); }
     }
-  
-    .animate-float {
-      animation: float 5s ease-in-out infinite;
-    }
-  
-    .animate-float-slow {
-      animation: float 8s ease-in-out infinite;
-    }
-  
-    .animate-float-fast {
-      animation: float 3s ease-in-out infinite;
-    }
+
+    .animate-float { animation: float 5s ease-in-out infinite; }
+    .animate-float-slow { animation: float 8s ease-in-out infinite; }
+    .animate-float-fast { animation: float 3s ease-in-out infinite; }
   </style>
-  
 </head>
 
-<body class="bg-pink-50 font-sans min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+<body class="bg-pink-50 font-sans min-h-screen flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
 
-    <!-- Floating stickers (hearts & flowers) -->
-    <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-      <img src="stickers/heart1.png" class="w-12 absolute top-12 left-10 animate-float" alt="Floating heart sticker" />
-      <img src="stickers/heart4.png" class="w-14 absolute bottom-12 right-12 animate-float-slow" alt="Floating heart sticker" />
-      <img src="stickers/heart2.png" class="w-10 absolute top-32 right-16 animate-float-fast" alt="Floating heart sticker" />
-      <img src="stickers/heart3.png" class="w-10 absolute bottom-12 left-16 animate-float-fast" alt="Floating heart sticker" />
+  <!-- Floating stickers -->
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+    <img src="stickers/heart1.png" class="w-10 sm:w-12 absolute top-[5%] left-[5%] animate-float" alt="Heart" />
+    <img src="stickers/heart4.png" class="w-12 sm:w-14 absolute bottom-[10%] right-[10%] animate-float-slow" alt="Heart" />
+    <img src="stickers/heart2.png" class="w-8 sm:w-10 absolute top-[25%] right-[5%] animate-float-fast" alt="Heart" />
+    <img src="stickers/heart3.png" class="w-8 sm:w-10 absolute bottom-[12%] left-[10%] animate-float-fast" alt="Heart" />
+  </div>
+
+  <!-- Main content -->
+  <div class="z-10 text-center space-y-6 max-w-xl w-full">
+    <div class="flex justify-center items-center gap-3 flex-wrap">
+      <img src="stickers/bear-love.gif" class="w-20 h-20 sm:w-24 sm:h-24 animate-bounce" alt="Bear" />
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-pink-600 animate-bounce">Happy Birthday Baby! 🎉</h1>
     </div>
-   
-    <!-- Main content -->
-    <div class="z-10 text-center space-y-6">
-      <!-- Cute sticker near the title -->
-      <div class="flex justify-center items-center gap-3">
-        <img src="stickers/bear-love.gif" class="w-24 h-24 animate-bounce" alt="Bear holding a heart" />
-        <h1 class="text-4xl font-extrabold text-pink-600 animate-bounce">Happy Birthday Baby! 🎉</h1>
-        
+
+    <button id="openGift" class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition shadow-lg">
+      Open Your Gift 🎁
+    </button>
+
+    <div id="giftContent" class="hidden mt-6 space-y-4">
+      <div id="cake" class="relative w-full max-w-xs aspect-square mx-auto overflow-hidden rounded-xl shadow-xl">
+        <img src="images/cake.gif" alt="Birthday Cake" class="w-full h-full object-contain" />
       </div>
-      
-      <button id="openGift" class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition shadow-lg">
-        Open Your Gift 🎁
+
+      <button id="openLetter" class="mt-4 bg-white text-pink-600 font-bold border border-pink-500 px-5 py-2 rounded hover:bg-pink-100 transition">
+        💌 Read My Love Letter
       </button>
-  
-      <div id="giftContent" class="hidden mt-6 space-y-4">
-        <div id="cake" class="relative w-80 h-80 mx-auto overflow-hidden rounded-xl shadow-xl">
-            <img src="images/cake.gif" alt="Birthday Cake" class="w-full h-full object-contain" />
-        </div>
-  
-        <button id="openLetter" class="mt-4 bg-white text-pink-600 font-bold border border-pink-500 px-5 py-2 rounded hover:bg-pink-100 transition">
-          💌 Read My Love Letter
-        </button>
-      </div>
-      <!-- Modal -->
+    </div>
+
+    <!-- Modal -->
     <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4 py-6">
-    <div class="relative bg-white rounded-2xl shadow-lg w-full max-w-4xl h-[90vh] overflow-hidden flex flex-col">
-  
-      <!-- Header -->
-      <div class="p-6 border-b border-pink-200 text-center">
-        <h2 class="text-3xl font-semibold text-pink-600">To My Baby 💖</h2>
+      <div class="relative bg-white rounded-2xl shadow-lg w-full max-w-3xl h-[90vh] overflow-hidden flex flex-col">
+        <!-- Header -->
+        <div class="p-6 border-b border-pink-200 text-center">
+          <h2 class="text-3xl font-semibold text-pink-600">To My Baby 💖</h2>
+        </div>
+
+        <!-- Scrollable message -->
+        <div class="p-6 overflow-y-auto text-gray-700 text-justify leading-relaxed whitespace-pre-line flex-grow">
+          Happy Birthday to the most amazing man I know! 🎉 Today is all about you—your life, your journey, and the incredible person you are. On this special day, I just want to remind you how truly grateful I am to have you in my life. You are such a blessing, and I thank the universe every day for leading me to you.
+
+          You deserve all the happiness in the world, not just today but every single day. Your kindness, your strength, your laughter, your unwavering support, and the way you love so deeply—it all makes me fall for you over and over again. Thank you for being you. So kind, so loving, and so incredibly supportive.
+
+          And just when I think I couldn’t love you more, life gives us another reason to celebrate—our anniversary tomorrow. 💞 How beautiful is it that we get to honor your life today, and then celebrate our love tomorrow? Two special days, side by side, and both of them are reminders of how lucky I am to walk this life with you.
+
+          As I look back on our journey together, I feel nothing but pride, joy, and excitement for what’s to come. You’ve been my rock, my joy, and my best friend. Our love has grown deeper with time, and I know in my heart that what we have is something truly special.
+
+          Here’s to celebrating your life, the love we share, and all the memories we’ve created—and will continue to create together. I love you endlessly, fiercely, and with every fiber of my being.
+
+          Happy Birthday and Happy Anniversary, my baby. 💖
+
+          Always yours,
+          Keah your baby
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-pink-200 text-center">
+          <button id="closeModal" class="bg-pink-500 text-white px-6 py-2 rounded hover:bg-pink-600 transition">Close</button>
+        </div>
       </div>
-  
-      <!-- Scrollable message -->
-      <div class="p-6 overflow-y-auto text-gray-700 text-justify leading-relaxed whitespace-pre-line flex-grow">Happy Birthday to the most amazing man I know! 🎉 Today is all about you—your life, your journey, and the incredible person you are. On this special day, I just want to remind you how truly grateful I am to have you in my life. You are such a blessing, and I thank the universe every day for leading me to you.
-
-        You deserve all the happiness in the world, not just today but every single day. Your kindness, your strength, your laughter, your unwavering support, and the way you love so deeply—it all makes me fall for you over and over again. Thank you for being you. So kind, so loving, and so incredibly supportive.
-        
-        And just when I think I couldn’t love you more, life gives us another reason to celebrate—our anniversary tomorrow. 💞 How beautiful is it that we get to honor your life today, and then celebrate our love tomorrow? Two special days, side by side, and both of them are reminders of how lucky I am to walk this life with you.
-        
-        As I look back on our journey together, I feel nothing but pride, joy, and excitement for what’s to come. You’ve been my rock, my joy, and my best friend. Our love has grown deeper with time, and I know in my heart that what we have is something truly special.
-        
-        Here’s to celebrating your life, the love we share, and all the memories we’ve created—and will continue to create together. I love you endlessly, fiercely, and with every fiber of my being.
-
-        Happy Birthday and Happy Anniversary, my baby. 💖
-        
-        Always yours,
-        Keah your baby
-      <!-- Footer -->
-      <div class="p-4 border-t border-pink-200 text-center">
-        <button id="closeModal" class="bg-pink-500 text-white px-6 py-2 rounded hover:bg-pink-600 transition">Close
-        </button>
-      </div>
-    </div>
     </div>
 
-    </div>
     <div id="countdown" class="text-lg text-pink-600 font-semibold mt-4"></div>
-    
-    <audio id="bgMusic" autoplay loop>
-        <source src="music/happy-birthday.mp3" type="audio/mpeg">
-      </audio>
-      
-      
-  </body>
-  
+  </div>
+
+  <!-- Background music -->
+  <audio id="bgMusic" autoplay loop playsinline>
+    <source src="music/happy-birthday.mp3" type="audio/mpeg">
+  </audio>
+
+</body>
 </html>
